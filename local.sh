@@ -56,6 +56,7 @@ main() {
 
     LOG_INFO "Running checker..."
     docker run --rm \
+            --name "$image_name-container" \
             --mount type=bind,source="$tmpdir",target=/build \
             "$image_name" /bin/bash /build/checker/checker.sh "${script_args[@]}"
 
