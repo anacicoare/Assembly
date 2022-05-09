@@ -1,5 +1,7 @@
 checker:
     image:
         name: jokeswar/iocla-3
+    before_script:
+        - echo ''
     script:
         - echo ''
