@@ -24,7 +24,7 @@ fi
 VENDOR_ID_INTEL=$(cat $OUTPUT_INTEL | head -n 1 | cut -d':' -f 2)
 REF_VENDOR_ID_INTEL=" GenuineIntel"
 VENDOR_ID_AMD=$(cat $OUTPUT_AMD | head -n 1 | cut -d':' -f 2)
-REF_VENDOR_ID_INTEL=" AuthenticAMD"
+REF_VENDOR_ID_AMD=" AuthenticAMD"
 
 if [[ "$VENDOR_ID_INTEL" == "$REF_VENDOR_ID_INTEL" ]]; then
     echo "Vendor ID Intel				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
@@ -76,7 +76,7 @@ else
     if [ -n "$(cat /proc/cpuinfo | grep -o "svm" | uniq)" ]; then
         HAVE_SVM=1
     fi
-    
+
     # MPX is emulated
     HAVE_MPX=1
 
