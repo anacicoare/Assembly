@@ -8,7 +8,7 @@ IN_EXT=".in"
 OUT_EXT=".out"
 REF_EXT=".ref"
 
-TASK_SCORE=$(echo "scale=2; 25 / 10" | bc) 
+TASK_SCORE=$(echo "scale=2; 25 / 10" | bc)
 MAX_SCORE=25
 TOTAL=0
 
@@ -21,7 +21,7 @@ for i in 1 2 3 4 5; do
 	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /dev/null
 	if [[ $? == "0" ]]; then
 		echo "Test $i					  ${TASK_SCORE}p/${TASK_SCORE}p"
-		TOTAL=TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
+		TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
 	else
 		echo "Test $i					  0.00p/${TASK_SCORE}p"
 	fi
@@ -32,9 +32,9 @@ for i in 6 7 8 9 10; do
 	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /dev/null
 	if [[ $? == "0" ]]; then
 		echo "Test $i					  ${TASK_SCORE}p/${TASK_SCORE}p"
-		TOTAL=TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
+		TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
 	else
-		
+
 		echo "Test $i					  0.00p/${TASK_SCORE}p"
 	fi
 done
