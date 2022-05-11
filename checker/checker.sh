@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")" || exit 1
 
-cp -r ./* ../src
+cp -ar ./* ../src
 
 if [ -z "$1" ] ; then
     make --no-print-directory --silent -C ../src
