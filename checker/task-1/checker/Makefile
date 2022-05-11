@@ -1,16 +1,17 @@
-CC=gcc
-CFLAGS=-m32 -g -fno-pie -no-pie
-ASM=nasm
-ASMFLAGS=-f elf32
+CC = gcc
+CFLAGS = -m32 -g -no-pie
+ASM = nasm
+ASMFLAGS = -f elf32
 MAKEFLAGS += --silent
+TASKNAME = task1
+LDFLAGS = -m32 -no-pie
 
-checker: checker.o task1.o
-	$(CC) $(CFLAGS) -o $@ $^
+checker: checker.o $(TASKNAME).o
 
 checker.o: checker.c
 
-task1.o: task1.asm
-	$(ASM) $(ASMFLAGS) $< -o $@
+$(TASKNAME).o: ../$(TASKNAME).asm
+	$(ASM) $(ASMFLAGS) $^ -o $@
 
 check:
 	./check.sh

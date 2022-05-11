@@ -34,6 +34,6 @@ else
 fi
 
 echo "====================================================="
-printf "Total:                                       %6.2fp\n" ${TOTAL} | tr ',' '.'
+printf "Total:                                        %6.2fp\n" ${TOTAL} | tr ',' '.'
 
 rm $RESULTS

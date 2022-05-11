@@ -1,23 +1,21 @@
 ASM = nasm
 ASMFLAGS = -f elf64
 TASKNAME = bonus_vectorial
-IMPL = ../../$(TASKNAME)/$(TASKNAME).asm
-SKEL = ../$(TASKNAME).asm
+CFLAGS = -no-pie
+LDFLAGS = -no-pie
+MAKEFLAGS = --silent
 
 build: checker
 
 check: 
 	./check.sh
 
-checker: checker.o bonus_vectorial.o
+checker: checker.o $(TASKNAME).o
  
-bonus_vectorial.o: $(SOURCE)
-	$(ASM) $(ASMFLAGS) $^
+$(TASKNAME).o: ../$(TASKNAME).asm
+	$(ASM) $(ASMFLAGS) $^ -o $@
 
 checker.o: checker.c
-
-copy:
-	if [ -f $(IMPL) ]; then cp $(IMPL) .; else cp $(SKEL) .; fi
 
 clean:
 	rm checker *.o
