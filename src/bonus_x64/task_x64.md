@@ -22,7 +22,7 @@ Semnificatia parametrilor:
   n2 -> lungimea celui de-al doilea vector
   v -> adresa vectorului rezultat.
   
-Atentie, functia nu returneaza nimic, rezultatul intercalarii se va salva in vectorul v, transims ca parametru.
+Functia nu intoarce nimic, rezultatul intercalarii se va salva in vectorul v, transims ca parametru.
 
 ## Punctare
 

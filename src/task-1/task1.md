@@ -1,8 +1,11 @@
 # Task 1 - Noduri (25p)
 
-Sursee dorește să găseasca drumul până în Rectorat ca să vadă si ea vestitul OZN. Ea știe prin ce clădiri trebuie să treacă dar lista a fost amestecată. Ajutați-o să ordoneze lista prin conectarea elementelor care inițial erau alăturate.
+Sursee dorește să găseasca drumul până în Rectorat ca să vadă si ea vestitul OZN.
+Ea știe prin ce clădiri trebuie să treacă dar lista a fost amestecată.
+Ajutați-o să ordoneze lista prin conectarea elementelor care inițial erau alăturate.
 
-Trebuie să implementați funcția cu semnătura `struct node* sort(int n, struct node* node);` din fișierul task1.asm, care “leagă” nodurile din listă în ordine crescătoare. Funcția primește numărul de noduri și adresa vectorului și întoarce adresa primului nod din lista rezultată.
+Trebuie să implementați funcția cu semnătura `struct node* sort(int n, struct node* node);` din fișierul task1.asm, care “leagă” nodurile din listă în ordine crescătoare.
+Funcția primește numărul de noduri și adresa vectorului și întoarce adresa primului nod din lista rezultată.
 
 Structura unui nod este:
 ```
@@ -43,7 +46,6 @@ Apelul funcției `sort` întoarce `0x3A` (adresa nodului cu valoarea 1) și vect
 | 0x3A      | 1         | 0x32      |
 | 0x42      | 3         | NULL      |
 ```
-
 
 ## Precizări:
 - n >= 1

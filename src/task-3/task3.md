@@ -1,8 +1,10 @@
 # Task 3 Sortare de cuvinte 25p
 
-Luna a mers împreună cu Sursee până în Rectorat dar acum trebuie sa ajungă îm Regie. Luna are de completat un rebus folosind cuvintele unui text și vă roagă să o ajutați prin a sorta cuvintele în funcție de lungime ca să îi fie mai ușor.
+Luna a mers împreună cu Sursee până în Rectorat dar acum trebuie sa ajungă îm Regie.
+Luna are de completat un rebus folosind cuvintele unui text și vă roagă să o ajutați prin a sorta cuvintele în funcție de lungime ca să îi fie mai ușor.
 
-Pentru acest task veți avea de separat un text în cuvinte după niște delimitatori și, după aceea, să sortați aceste cuvinte folosind functia qsort. Sortarea se va face întâi după lungimea cuvintelor și în cazul egalității se va sorta lexicografic.
+Pentru acest task veți avea de separat un text în cuvinte după niște delimitatori și, după aceea, să sortați aceste cuvinte folosind functia qsort.
+Sortarea se va face întâi după lungimea cuvintelor și în cazul egalității se va sorta lexicografic.
 
 Va trebui să implementați 2 functii cu semnaturile `void get_words(char *s, char **words, int number_of_words);` si `void sort(char **words, int number_of_words, int size);` din fisierul `task3.asm`. 
 
@@ -35,7 +37,8 @@ Atenție, funcția *nu* returnează nimic, sortarea se face in-place!
 - lungimea textului este mai mica decat 1000;
 - vectorul de cuvinte va avea maxim 100 de cuvine a 100 de caractere fiecare;
 - delimitatorii pe care trebuie sa ii luati in calcul sunt: " ,.\n"
-- nu aveti voie sa folositi alta metoda de sortare in afara de qsort. In cazul in care veti folosi alta metoda punctajul pe acest task se va pierde.
+- nu aveti voie sa folositi alta metoda de sortare in afara de qsort.
+In cazul in care veti folosi alta metoda punctajul pe acest task se va pierde.
 
 ## Exemplu
 ```
