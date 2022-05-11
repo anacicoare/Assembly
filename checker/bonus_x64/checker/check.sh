@@ -32,4 +32,4 @@ printf "Total score:				  %3.2fp/%3.2fp\n" ${TOTAL} ${MAX_SCORE} | tr ',' '.'
 
 make clean > /dev/null 2>&1
 
-echo "bonus_64bits:${TOTAL}" >> ../../.results
+echo "bonus_x64:${TOTAL}" >> ../../.results
