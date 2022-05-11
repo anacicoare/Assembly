@@ -1,5 +1,4 @@
-*/checker/checker
-*/checker/*.o
-*/checker/*.asm
-*/checker/*.S
-*/checker/*.out
+checker/*/checker/*.out
+checker/*/checker/tests/out/*.out
+checker/*/checker/*.o
+checker/*/checker/checker
