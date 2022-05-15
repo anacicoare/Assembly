@@ -4,14 +4,16 @@ TOTAL=0
 ZERO_FOUND=0
 NONZERO_FOUND=0
 
+make > /dev/null 2>&1
+
 echo "====================== Timegate bonus task  ======================="
 
 for i in 1 2 3 4 5; do
 	OUTPUT=$(./checker)
-	if [[ $OUTPUT == "0" ]]; then 
+	if [[ $OUTPUT == "0" ]]; then
 		ZERO_FOUND="1"
 		break
-	fi	
+	fi
 done
 for i in 1 2 3 4 5; do
 	OUTPUT=$(gdb ./checker -x gdb_commands | tail -n 2 | head -n 1)

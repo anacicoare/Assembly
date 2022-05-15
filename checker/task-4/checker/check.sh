@@ -8,6 +8,8 @@ BIG_TASK_SCORE=2
 MAX_SCORE=15
 TOTAL=0
 
+make > /dev/null 2>&1
+
 echo "====================== Task 4 ======================="
 
 CPU=$(cat /proc/cpuinfo | grep "vendor_id" | uniq | cut -d':' -f2 | cut -d' ' -f2)

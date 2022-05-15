@@ -12,6 +12,8 @@ TASK_SCORE=$(echo "scale=2; 25 / 10" | bc)
 MAX_SCORE=25
 TOTAL=0
 
+make > /dev/null 2>&1
+
 echo "====================== Task 2 ======================="
 
 for i in 1 2 3 4 5; do
