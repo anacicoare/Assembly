@@ -10,7 +10,7 @@ check:
 clean:
 	rm */checker/*.o
 	rm */checker/checker
-	rm */checker/*.asm
+	rm */*.{asm,S}
 
 zip:
 	bash -c 'zip assignment3.zip */*.{S,asm} *.md'
