@@ -4,6 +4,8 @@ cd "$(dirname "$0")" || exit 1
 
 cp -ar ./* ../src
 
+[ -n "$CI" ] && echo "VMCHECKER_TRACE_CLEANUP\n"
+
 if [ -z "$1" ] ; then
     make --no-print-directory --silent -C ../src
 else
