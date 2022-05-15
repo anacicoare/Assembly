@@ -5,15 +5,6 @@ fail() {
     exit 1
 }
 
-shopt -s extglob
-rm -f !("tests"|"check.sh"|"checker.c"|"Makefile")
-if [ -f ../../task3.asm ]; then
-	cp -r ../../task3/task3.asm .
-else
-	cp -r ../task3.asm .
-fi
-sleep 2     # to avoid "make: warning:  Clock skew detected."
-
 if [ ! -e Makefile ]; then
     fail "Makefile not found"
 fi

@@ -12,8 +12,6 @@ TASK_SCORE=5
 MAX_SCORE=15
 TOTAL=0
 
-make copy > /dev/null 2>&1 && make > /dev/null 2>&1
-
 echo "============ SIMD instructions bonus task ==========="
 
 for i in 1 2 3; do
