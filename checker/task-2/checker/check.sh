@@ -18,24 +18,25 @@ echo "====================== Task 2 ======================="
 
 for i in 1 2 3 4 5; do
 	./checker 0 < "${INPUTS}${i}${IN_EXT}" > "${OUTPUTS}${i}${OUT_EXT}"
-	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /dev/null
+	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /tmp/diff_out
 	if [[ $? == "0" ]]; then
 		echo "Test $i					  ${TASK_SCORE}p/${TASK_SCORE}p"
 		TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
 	else
 		echo "Test $i					  0.00p/${TASK_SCORE}p"
+		cat /tmp/diff_out
 	fi
 done
 
 for i in 6 7 8 9 10; do
 	./checker 1 < "${INPUTS}${i}${IN_EXT}" > "${OUTPUTS}${i}${OUT_EXT}"
-	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /dev/null
+	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /tmp/diff_out
 	if [[ $? == "0" ]]; then
 		echo "Test $i					  ${TASK_SCORE}p/${TASK_SCORE}p"
 		TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
 	else
-
 		echo "Test $i					  0.00p/${TASK_SCORE}p"
+		cat /tmp/diff_out
 	fi
 done
 

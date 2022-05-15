@@ -48,6 +48,7 @@ for i in 1 2 3 4 5; do
         echo "Test ${i}					  5.00p/5.00p"
     else
         echo "Test ${i}					  0.00p/5.00p"
+	echo "$out"
     fi
 done
 

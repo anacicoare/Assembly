@@ -31,6 +31,7 @@ if [[ "$VENDOR_ID_INTEL" == "$REF_VENDOR_ID_INTEL" ]]; then
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
     echo "Vendor ID Intel				  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "Expected: $REF_VENDOR_ID_INTEL, received: $VENDOR_ID_INTEL"
 fi
 
 if [[ "$VENDOR_ID_AMD" == "$REF_VENDOR_ID_AMD" ]]; then
@@ -38,6 +39,7 @@ if [[ "$VENDOR_ID_AMD" == "$REF_VENDOR_ID_AMD" ]]; then
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
     echo "Vendor ID AMD				  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "Expected: $REF_VENDOR_ID_AMD, received: $VENDOR_ID_AMD"
 fi
 
 HAVE_MPX=0
@@ -94,6 +96,7 @@ if [[ "$HAVE_APIC" == "$APIC" ]]; then
     TOTAL=$((TOTAL + SMALL_TASK_SCORE))
 else
     echo "APIC					  0.00p/${SMALL_TASK_SCORE}.00p"
+    echo "Expected: $HAVE_APIC, received: $APIC"
 fi
 
 if [[ "$HAVE_RDRAND" == "$RDRAND" ]]; then
@@ -101,6 +104,7 @@ if [[ "$HAVE_RDRAND" == "$RDRAND" ]]; then
     TOTAL=$((TOTAL + SMALL_TASK_SCORE))
 else
     echo "RDRAND					  0.00p/${SMALL_TASK_SCORE}.00p"
+    echo "Expected: $HAVE_RDRAND, received: $RDRAND"
 fi
 
 if [[ "$HAVE_MPX" == "$MPX" ]]; then
@@ -108,6 +112,7 @@ if [[ "$HAVE_MPX" == "$MPX" ]]; then
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
     echo "MPX					  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "Expected: $HAVE_MPX, received: $MPX"
 fi
 
 if [[ "$HAVE_SVM" == "$SVM" ]]; then
@@ -115,6 +120,7 @@ if [[ "$HAVE_SVM" == "$SVM" ]]; then
     TOTAL=$((TOTAL + 3))
 else
     echo "SVM					  0.00p/3.00p"
+    echo "Expected: $HAVE_SVM, received: $SVM"
 fi
 
 CACHE_LINE_REF=$(getconf -a | grep LEVEL2_CACHE_LINESIZE | cut -d' ' -f15)
@@ -133,6 +139,7 @@ if [[ "$CACHE_LINE_REF" == "$CACHE_LINE" ]]; then
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
     echo "Cache Line				  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "Expected: $CACHE_LINE_REF, received: $CACHE_LINE"
 fi
 
 if [[ "$CACHE_SIZE_REF" == "$CACHE_SIZE" ]]; then
@@ -140,6 +147,7 @@ if [[ "$CACHE_SIZE_REF" == "$CACHE_SIZE" ]]; then
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
     echo "Cache Size				  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "Expected: $CACHE_SIZE_REF, received: $CACHE_SIZE"
 fi
 
 echo
