@@ -33,6 +33,9 @@ else
 	echo "Coding-style points:			 0.00p/10.00p"
 fi
 
+# printf is retarded
+TOTAL=$(echo $TOTAL | tr '.' ',')
+
 echo "====================================================="
 printf "Total:                                        %6.2fp\n" ${TOTAL} | tr ',' '.'
 

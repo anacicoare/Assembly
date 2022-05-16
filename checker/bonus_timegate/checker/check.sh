@@ -6,28 +6,28 @@ NONZERO_FOUND=0
 
 make > /dev/null 2>&1
 
-echo "====================== Timegate bonus task  ======================="
+echo "=============== Timegate bonus task  ================"
 
 HAS_RDRAND="true"
-if [ $(grep -o rdrand /proc/cpuinfo | uniq) -eq "" ]; then
+if [ -z $(grep -o rdrand /proc/cpuinfo | uniq) ]; then
 	echo "WARNING: the machine doesn't support RDRAND"
 	HAS_RDRAND="false"
 fi
 
 for i in 1 2 3 4 5; do
-	if [ $HAS_RDRAND -eq "true" ]; then
+	if [ $HAS_RDRAND == "true" ]; then
 		OUTPUT=$(./checker)
 	else
 		echo "Emulating RDRAND"
 		OUTPUT=$(qemu-i386 -cpu IvyBridge,+rdrand ./checker 2> /dev/null)
 	fi
-	if [[ $OUTPUT == "0" ]]; then
+	if [ $OUTPUT == "0" ]; then
 		ZERO_FOUND="1"
 		break
 	fi
 done
 for i in 1 2 3 4 5; do
-	if [ $HAS_RDRAND -eq "true" ]; then
+	if [ $HAS_RDRAND == "true" ]; then
 		OUTPUT=$(gdb ./checker -x gdb_commands | tail -n 2 | head -n 1)
 		if [[ $OUTPUT != "0" ]]; then
 			NONZERO_FOUND="1"
@@ -38,18 +38,18 @@ for i in 1 2 3 4 5; do
 		break
 	fi
 done
-if [[ $ZERO_FOUND == "1" ]]; then
+if [ $ZERO_FOUND == "1" ]; then
 	echo "Error: You didn't generate a random number, but you should have"
 fi
-if [[ $NONZERO_FOUND == "1" ]]; then
+if [ $NONZERO_FOUND == "1" ]; then
 	echo "Error: You generated a random number, but you shouldn't have"
 fi
-if [[ $ZERO_FOUND == "0" ]] && [[ $NONZERO_FOUND == "0" ]]; then
+if [ $ZERO_FOUND == "0" ] && [ $NONZERO_FOUND == "0" ]; then
 	TOTAL=$TASK_SCORE
 fi
 
 echo
-printf "Total score:				%3.2fp/%3.2fp\n" ${TOTAL} ${TASK_SCORE} | tr ',' '.'
+printf "Total score:				  %3.2fp/%3.2fp\n" ${TOTAL} ${TASK_SCORE} | tr ',' '.'
 
 make clean > /dev/null 2>&1
 

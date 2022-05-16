@@ -30,7 +30,7 @@ echo
 for i in 1 2 3; do
 	./checker < "${INPUTS}${i}${IN_EXT}" > "${OUTPUTS}${i}${OUT_EXT}"
 	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /tmp/diff_out
-	if [[ $? == "0" ]]; then
+	if [ "$?" == "0" ]; then
 		echo "Test $i					  ${TASK_SCORE}.00p/${TASK_SCORE}.00p"
 		TOTAL=$((TOTAL + TASK_SCORE))
 	else

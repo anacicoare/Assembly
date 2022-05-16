@@ -19,7 +19,7 @@ echo "====================== Task 2 ======================="
 for i in 1 2 3 4 5; do
 	./checker 0 < "${INPUTS}${i}${IN_EXT}" > "${OUTPUTS}${i}${OUT_EXT}"
 	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /tmp/diff_out
-	if [[ $? == "0" ]]; then
+	if [ "$?" == "0" ]; then
 		echo "Test $i					  ${TASK_SCORE}p/${TASK_SCORE}p"
 		TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
 	else
@@ -31,7 +31,7 @@ done
 for i in 6 7 8 9 10; do
 	./checker 1 < "${INPUTS}${i}${IN_EXT}" > "${OUTPUTS}${i}${OUT_EXT}"
 	diff "${OUTPUTS}${i}${OUT_EXT}" "${REFS}${i}${REF_EXT}" > /tmp/diff_out
-	if [[ $? == "0" ]]; then
+	if [ "$?" == "0" ]; then
 		echo "Test $i					  ${TASK_SCORE}p/${TASK_SCORE}p"
 		TOTAL=$(echo "scale=2; $TOTAL + $TASK_SCORE" | bc)
 	else
@@ -40,9 +40,14 @@ for i in 6 7 8 9 10; do
 	fi
 done
 
+# printf is retarded
+TOTAL=$(echo $TOTAL | tr '.' ',')
+
 echo
 printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE} | tr ',' '.'
 
 make clean > /dev/null 2>&1
 
+# printf is retarded
+TOTAL=$(echo $TOTAL | tr ',' '.')
 echo "task-2:${TOTAL}" >> ../../.results
