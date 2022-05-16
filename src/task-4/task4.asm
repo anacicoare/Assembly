@@ -12,7 +12,7 @@ cpu_manufact_id:
 	leave
 	ret
 
-;; void features(int *apic, int *rdrand, int *sgx, int *svm)
+;; void features(int *apic, int *rdrand, int *mpx, int *svm)
 ;
 ;  checks whether apic, rdrand and mpx / svm are supported by the CPU
 ;  MPX should be checked only for Intel CPUs; otherwise, the mpx variable
