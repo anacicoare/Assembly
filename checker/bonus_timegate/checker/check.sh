@@ -8,17 +8,33 @@ make > /dev/null 2>&1
 
 echo "====================== Timegate bonus task  ======================="
 
+HAS_RDRAND="true"
+if [ $(grep -o rdrand /proc/cpuinfo | uniq) -eq "" ]; then
+	echo "WARNING: the machine doesn't support RDRAND"
+	HAS_RDRAND="false"
+fi
+
 for i in 1 2 3 4 5; do
-	OUTPUT=$(./checker)
+	if [ $HAS_RDRAND -eq "true" ]; then
+		OUTPUT=$(./checker)
+	else
+		echo "Emulating RDRAND"
+		OUTPUT=$(qemu-i386 -cpu IvyBridge,+rdrand ./checker 2> /dev/null)
+	fi
 	if [[ $OUTPUT == "0" ]]; then
 		ZERO_FOUND="1"
 		break
 	fi
 done
 for i in 1 2 3 4 5; do
-	OUTPUT=$(gdb ./checker -x gdb_commands | tail -n 2 | head -n 1)
-	if [[ $OUTPUT != "0" ]]; then
-		NONZERO_FOUND="1"
+	if [ $HAS_RDRAND -eq "true" ]; then
+		OUTPUT=$(gdb ./checker -x gdb_commands | tail -n 2 | head -n 1)
+		if [[ $OUTPUT != "0" ]]; then
+			NONZERO_FOUND="1"
+			break
+		fi
+	else
+		echo "Can't test second part of the task; manual check required"
 		break
 	fi
 done
