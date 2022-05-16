@@ -18,4 +18,4 @@ $(TASKNAME).o: ../$(TASKNAME).asm
 checker.o: checker.c
 
 clean:
-	rm checker *.o
+	rm checker *.o *.out
