@@ -23,13 +23,19 @@ Scrieti noul continut intr-un nou fisier, dat, de asemenea, ca argument.
 ## Precizari
  * Task-ul va fi realizat in Assembly pe 32 de biti
  * Aveti nevoie de apelurile de sistem `sys_open`, `sys_read`, `sys_write`, `sys_close`.
- * Aceste apeluri de sistem exista si in C, sub forma unor functii cu acelasi nume.
+ * Aceste apeluri de sistem exista si in C, sub forma unor functii cu acelasi nume (fara "sys_").
  * Atentie: aceste apeluri de sistem sunt specifice Linux. Alte sisteme de operare implementeaza alte apeluri de sistem
  * Nu aveti voie sa folositi functii externe (ex. `fgets`) pentru a deschide, inchide fisiere sau pentru a scrie sau a citi din fisiere
  * Nu e nevoie sa apelati `exit` la finalul functiei
  * Fisierele contin maxim 100 de caractere
+ * In caz de eroare, apelurile de sistem din assembly intorc -ERRNO, unde ERRNO este un cod standard de eroare din Linux.
+
 
 ## Punctare
 
 Task-ul valoreaza 10p.
 Nu se vor acorda puncte daca citirea, scrierea, deschiderea si inchiderea fisierelor nu se face cu apeluri de sistem.
+
+## Resurse utile
+
+[Codurile ERRNO](https://www.thegeekstuff.com/2010/10/linux-error-codes/)
