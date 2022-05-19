@@ -9,7 +9,7 @@ OUT_EXT=".out"
 REF_EXT=".ref"
 
 MAX_SCORE=10
-TASK_SCORE=$(echo "scale=3; MAX_SCORE / 3" | bc)
+TASK_SCORE=$(echo "scale=3; $MAX_SCORE / 3" | bc)
 TOTAL=0
 
 make > /dev/null 2>&1
