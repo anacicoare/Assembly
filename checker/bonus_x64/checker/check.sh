@@ -23,7 +23,7 @@ for i in 1 2 3; do
 		echo "Test $i					  ${TASK_SCORE::-1}p/${TASK_SCORE::-1}p"
 		TOTAL=$(echo "scale = 2; $TOTAL + $TASK_SCORE" | bc)
 	else
-		echo "Test $i					  0.00p/${TASK_SCORE}p"
+		echo "Test $i					  0.00p/${TASK_SCORE::-1}p"
 		cat /tmp/diff_out
 	fi
 done
