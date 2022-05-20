@@ -29,7 +29,7 @@ done
 for i in 1 2 3 4 5; do
 	if [ $HAS_RDRAND == "true" ]; then
 		OUTPUT=$(gdb ./checker -x gdb_commands | tail -n 2 | head -n 1)
-		if [[ $OUTPUT != "0" ]]; then
+		if [ $OUTPUT != "0" ]; then
 			NONZERO_FOUND="1"
 			break
 		fi

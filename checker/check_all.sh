@@ -34,7 +34,7 @@ else
 fi
 
 # printf is retarded
-TOTAL=$(echo $TOTAL | tr '.' ',')
+# TOTAL=$(echo $TOTAL | tr '.' ',')
 
 echo "====================================================="
 printf "Total:                                        %6.2fp\n" ${TOTAL} | tr ',' '.'
