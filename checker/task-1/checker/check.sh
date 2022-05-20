@@ -44,5 +44,5 @@ for i in {1..5}; do
 done
 
 echo
-printf "Total score:				%5.2fp/25.00p\n" ${total} | tr ',' '.'
+printf "Total score:				%5.2fp/25.00p\n" ${total}
 echo "task-1:$total" >> ../../.results

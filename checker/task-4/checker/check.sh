@@ -151,6 +151,6 @@ else
 fi
 
 echo
-printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE} | tr ',' '.'
+printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE}
 
 echo "task-4:${TOTAL}" >> ../../.results

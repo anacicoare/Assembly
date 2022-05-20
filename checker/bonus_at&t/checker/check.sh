@@ -28,15 +28,9 @@ for i in 1 2 3 ; do
 	fi
 done
 
-# printf is retarded
-# TOTAL=$(echo $TOTAL | tr '.' ',')
-
 echo
-printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE} | tr ',' '.'
+printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE}
 
 make clean > /dev/null 2>&1
-
-# printf is retarded
-# TOTAL=$(echo $TOTAL | tr ',' '.')
 
 echo "bonus_at&t:${TOTAL}" >> ../../.results

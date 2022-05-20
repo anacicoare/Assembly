@@ -49,7 +49,7 @@ if [ $ZERO_FOUND == "0" ] && [ $NONZERO_FOUND == "0" ]; then
 fi
 
 echo
-printf "Total score:				  %3.2fp/%3.2fp\n" ${TOTAL} ${TASK_SCORE} | tr ',' '.'
+printf "Total score:				  %3.2fp/%3.2fp\n" ${TOTAL} ${TASK_SCORE}
 
 make clean > /dev/null 2>&1
 
