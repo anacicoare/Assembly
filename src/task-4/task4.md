@@ -23,3 +23,10 @@ Implementarea se va face în fișierul `task4.asm`.
  - Checker-ul va verifica ce tip de procesor este prezent și va verifica output-ul funcțiilor voastre in funcție de prezența componentelor cerute pe sistem (dacă procesorul vostru este Intel și nu are MPX, se va aștepta ca rezultatul pentru MPX sa fie 0)
  - Checker-ul va emula celălalt procesor, cu **toate componentele cerute**, folosind `qemu-i386`.
  - Implementarea trebuie să poată verifica și componentele specifice Intel, și cele specifice AMD, în funcție de ce tip de procesor e detectat.
+ - Informatii despre cache-ul de nivelul 2 se pot obtine folosind EAX=0x80000006 sau EAX=0x2.
+ Folosind EAX=0x80000006 se poate afisa o dimensiune de maxim 512KB.
+ Pentru dimensiuni mai mari, trebuie folosit EAX=0x2, care implica parsarea registrelor EAX, EBX, ECX, EDX, astfel:
+ AL indica e cate ori trebuie apelat CPUID cu EAX=0x2, pentru a obtine date valide.
+ Bit-ul 31 din fiecare registru indica daca contine date valide (valoarea 0) sau nu (valoarea 1).
+ Daca un registru contine date valide, acesta va contine cate o valoare pe un byte, cu o anumita specificatie.
+ specificatia fiecarui byte poate fi gasita [aici](https://c9x.me/x86/html/file_module_x86_id_45.html), la sectiunea **INPUT EAX = 2:**.
