@@ -27,6 +27,7 @@ Acel numar de cicluri de ceas este retinut intr-un registru intern al procesorul
 1) Folosind instructiunile de mai sus, implementati functia `get_rand` din fisierul `bonus_timegate.asm`, care intoarce un numar aleatoriu pe 32 de biti.
 Aceasta functie trebuie sa nu poata fi inspectata folosind GDB (nu trebuie sa se poata folosi GDB pentru a afla numarul aleatoriu).
 In caz ca este detectat GDB-ul, functia va intoarce 0. (5p)
+Pentru a putea testa automat implementarea, introduceti in cod label-ul **rdrand_here:**, fix inainte de instructiunea **rdrand** / **rdseed**.
 
 2) Implementati un program care foloseste functia `get_rand`, pentru a obtine un secret, pe baza numarului aleatoriu generat si a unui sir constant de caractere.
 Acesta poate fi un numar, un sir de caractere, etc.
