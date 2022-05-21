@@ -123,8 +123,8 @@ else
     echo "Expected: $HAVE_SVM, received: $SVM"
 fi
 
-CACHE_LINE_REF=$(getconf LEVEL2_CACHE_LINESIZE)
-CACHE_SIZE_REF=$(($(getconf LEVEL2_CACHE_SIZE) / 1024))
+CACHE_LINE_REF=$(cat /sys/devices/system/cpu/cpu0/cache/index2/coherency_line_size)
+CACHE_SIZE_REF$(cat /sys/devices/system/cpu/cpu0/cache/index2/size)
 
 if [ "$CPU" == "GenuineIntel" ]; then
     CACHE=$(cat $OUTPUT_INTEL | tail -n 1)
