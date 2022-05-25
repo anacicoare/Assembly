@@ -30,6 +30,6 @@ done
 echo
 printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE}
 
-# make clean > /dev/null 2>&1
+make clean > /dev/null 2>&1
 
 echo "bonus_floating_point:${TOTAL}" >> ../../.results
