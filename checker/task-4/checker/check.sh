@@ -5,6 +5,9 @@ OUTPUT_AMD="cpuid_amd.out"
 
 SMALL_TASK_SCORE=1
 BIG_TASK_SCORE=2
+BIGGER_TASK_SCORE=4
+BONUS_TASK_SCORE=5
+
 MAX_SCORE=15
 TOTAL=0
 
@@ -135,18 +138,18 @@ CACHE_LINE=$(echo $CACHE | cut -d',' -f1 | cut -d' ' -f3)
 CACHE_SIZE=$(echo $CACHE | cut -d',' -f2 | cut -d' ' -f4)
 
 if [ "$CACHE_LINE_REF" == "$CACHE_LINE" ]; then
-    echo "Cache Line				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
-    TOTAL=$((TOTAL + BIG_TASK_SCORE))
+    echo "Cache Line				  ${BIGGER_TASK_SCORE}.00p/${BIGGER_TASK_SCORE}.00p"
+    TOTAL=$((TOTAL + BIGGER_TASK_SCORE))
 else
-    echo "Cache Line				  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "Cache Line				  0.00p/${BIGGER_TASK_SCORE}.00p"
     echo "Expected: $CACHE_LINE_REF, received: $CACHE_LINE"
 fi
 
 if [ "$CACHE_SIZE_REF" == "$CACHE_SIZE" ]; then
-    echo "Cache Size				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
-    TOTAL=$((TOTAL + BIG_TASK_SCORE))
+    echo "[BONUS] Cache Size			  ${BONUS_TASK_SCORE}.00p/${BONUS_TASK_SCORE}.00p"
+    TOTAL=$((TOTAL + BONUS_TASK_SCORE))
 else
-    echo "Cache Size				  0.00p/${BIG_TASK_SCORE}.00p"
+    echo "[BONUS] Cache Size			  0.00p/${BONUS_TASK_SCORE}.00p"
     echo "Expected: $CACHE_SIZE_REF, received: $CACHE_SIZE"
 fi
 
