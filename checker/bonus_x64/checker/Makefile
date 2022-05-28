@@ -2,8 +2,7 @@ ASM = nasm
 ASMFLAGS = -f elf64
 MAKEFLAGS = --silent
 TASKNAME = bonus_x64
-CFLAGS = -fno-pie -g -no-pie
-LDFLAGS = -fno-pie
+CFLAGS = -g
 
 build: checker
 
