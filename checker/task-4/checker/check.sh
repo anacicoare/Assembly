@@ -127,7 +127,7 @@ else
 fi
 
 CACHE_LINE_REF=$(cat /sys/devices/system/cpu/cpu0/cache/index2/coherency_line_size)
-CACHE_SIZE_REF=$(cat /sys/devices/system/cpu/cpu0/cache/index2/size) | tr 'K' ''
+CACHE_SIZE_REF=$(cat /sys/devices/system/cpu/cpu0/cache/index2/size) | tr 'K' '\0'
 
 if [ "$CPU" == "GenuineIntel" ]; then
     CACHE=$(cat $OUTPUT_INTEL | tail -n 1)
