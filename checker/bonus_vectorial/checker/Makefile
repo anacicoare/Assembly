@@ -1,8 +1,8 @@
 ASM = nasm
 ASMFLAGS = -f elf64
 TASKNAME = bonus_vectorial
-CFLAGS = -no-pie
-LDFLAGS = -no-pie
+CFLAGS = -no-pie -fno-pie -g
+LDFLAGS = -no-pie -fno-pie
 MAKEFLAGS = --silent
 
 build: checker

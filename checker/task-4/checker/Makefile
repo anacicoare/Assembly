@@ -1,9 +1,9 @@
 CC = gcc
-CFLAGS = -m32 -no-pie
+CFLAGS = -m32 -no-pie -fno-pie -g
 ASM = nasm
 ASMFLAGS = -f elf
 TASKNAME = task4
-LDFLAGS = -m32 -no-pie
+LDFLAGS = -m32 -no-pie -fno-pie
 
 build: checker
 

@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -m32 -no-pie
+CFLAGS = -m32 -no-pie -fno-pie -g
 MAKEFLAGS = --silent
 TASKNAME = bonus_at_t
-LDFLAGS = -m32 -no-pie
+LDFLAGS = -m32 -no-pie -fno-pie
 
 build: checker
 

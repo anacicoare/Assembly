@@ -2,10 +2,10 @@ ASM = nasm
 ASMFLAGS = -f elf32
 MAKEFLAGS = --silent
 CC = gcc
-CFLAGS = -m32 -no-pie
+CFLAGS = -m32 -no-pie -fno-pie -g
 TASKNAME_1 = task2_p1
 TASKNAME_2 = task2_p2
-LDFLAGS = -m32 -no-pie
+LDFLAGS = -m32 -no-pie -fno-pie
 
 build: checker
 
