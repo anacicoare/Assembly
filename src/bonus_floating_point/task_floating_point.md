@@ -18,6 +18,11 @@ Sa se scrie functia `do_math`, care primeste 3 parametri de tip float, **x**, **
 
 Acest task valoreaza 15 puncte.
 
+## Precizari
+
+**PI** si **e** nu pot fi declarate ca variabile de voi.
+Ele trebuie sa fie aflate / folosite doar prin instructiunile puse la dispozitie de FPU.
+
 ## Referinte
 
 [https://docs.oracle.com/cd/E18752_01/html/817-5477/eoizy.html](Instructiunile FPU)
